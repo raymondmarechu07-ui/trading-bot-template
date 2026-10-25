@@ -73,7 +73,7 @@
         },
         "hostname": {
             "production": {
-                "com": "bot.yourbrand.com"
+                "com": "trading-bot-template.onrender.com"
             },
             "staging": {
                 "com": "staging-bot.yourbrand.com"
