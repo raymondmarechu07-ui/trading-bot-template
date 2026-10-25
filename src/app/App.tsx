@@ -55,7 +55,8 @@ const router = createBrowserRouter(
             {/* All child routes will be passed as children to Layout */}
             <Route index element={<AppRoot />} />
         </Route>
-    )
+    ),
+    { basename: process.env.BOT_BASE_PATH || '/' }
 );
 
 /**
