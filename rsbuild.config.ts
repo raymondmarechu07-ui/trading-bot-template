@@ -32,6 +32,7 @@ export default defineConfig({
                 GD_CLIENT_ID: JSON.stringify(process.env.GD_CLIENT_ID),
                 GD_APP_ID: JSON.stringify(process.env.GD_APP_ID),
                 GD_API_KEY: JSON.stringify(process.env.GD_API_KEY),
+                BOT_BASE_PATH: JSON.stringify(process.env.BOT_BASE_PATH || ''),
             },
         },
         alias: {
