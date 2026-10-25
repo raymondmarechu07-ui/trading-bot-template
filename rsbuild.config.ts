@@ -46,6 +46,7 @@ export default defineConfig({
         },
     },
     output: {
+        assetPrefix: process.env.BOT_BASE_PATH ? `${process.env.BOT_BASE_PATH.replace(/\\/$/, '')}/` : '/',
         copy: [
             {
                 from: 'node_modules/@deriv-com/smartcharts-champion/dist/*',
