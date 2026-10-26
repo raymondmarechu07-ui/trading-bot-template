@@ -28,6 +28,15 @@ export const WS_SERVERS = {
 
 // Helper to check if we're on production domains
 export const isProduction = () => {
+    // The DBot engine may be served behind a reverse proxy or mounted under
+    // another product's domain (for example StarTraders /bot-builder). In
+    // that case hostname-based detection incorrectly selects Deriv staging.
+    // Prefer the explicit build-time environment when it is supplied, and
+    // retain hostname detection as a fallback for standalone deployments.
+    if (process.env.APP_ENV) {
+        return process.env.APP_ENV.toLowerCase() === 'production';
+    }
+
     const hostname = window.location.hostname;
     const productionDomains = Object.values(PRODUCTION_DOMAINS) as string[];
     return productionDomains.includes(hostname);
